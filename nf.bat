@@ -1,6 +1,6 @@
 :: New Folder Menu Script
 
-SET version=1.0
+SET version=0.1
 TITLE New Folder Menu %version%
 ECHO OFF
 CLS
@@ -32,6 +32,16 @@ del "%temp%\geturl.vbs"
 set /p newestversion= <newestversion.adv
 ECHO.
 echo newestversion=%newestversion% and version=%version%
+
+IF %version%==%newestversion% (
+  ::If the current installed version mathces the latest version
+  echo Your version is up to date!
+  )
+
+IF %version% LSS %newestversion% (
+  ::If the current installed version is older than the latest version
+  echo Your version is out of date!
+  )
 
 :: Menu Start
 :MENU
