@@ -1,6 +1,6 @@
 :: New Folder Menu Script
 
-SET version=0.1
+SET version=1.0
 TITLE New Folder Menu %version%
 ECHO OFF
 CLS
