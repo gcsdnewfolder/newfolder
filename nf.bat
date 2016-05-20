@@ -6,7 +6,20 @@ ECHO OFF
 CLS
 color 3f
 
+::Password Check 1 Start
+:PASSCHECK1
+CLS
+ECHO.
+ECHO ...............................................
+ECHO About 70 degress shwelshius? 
+ECHO ...............................................
+ECHO.
+SET /P M=Type answer then press ENTER: 
+IF NOT %M%==woot_woot GOTO PASSCHECK1
+::Password Check 1 End
+
 :: Version Check Start
+:VERCHECK
 @echo off
  >"%temp%\geturl.vbs" echo Set objArgs = WScript.Arguments
 >>"%temp%\geturl.vbs" echo url = objArgs(0)
@@ -45,6 +58,7 @@ IF %version% LSS %newestversion% (
 
 :: Menu Start
 :MENU
+CLS
 ECHO.
 ECHO ...............................................
 ECHO PRESS 1, 2, 3, 4 OR 5 to select your task, or 6 to EXIT.
@@ -64,6 +78,9 @@ IF %M%==3 GOTO IE
 IF %M%==4 GOTO MUSIC
 IF %M%==5 GOTO CMD
 IF %M%==6 GOTO EOF
+IF ELSE (
+	GOTO MENU
+	)
 :: Menu End
 
 :: Execute Menu Options Start
