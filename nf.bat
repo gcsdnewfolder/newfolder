@@ -122,7 +122,7 @@ ECHO 1 - Open Chrome
 ECHO 2 - Open Paint
 ECHO 3 - Open Internet Explorer(In Private)
 ECHO 4 - Open Chrome(Incognito)
-ECHO 5 - Open New Folder(Coming Soon)
+ECHO 5 - Open New Folder
 ECHO 6 - Previous Page
 ECHO 7 - Exit
 ECHO.
@@ -131,7 +131,7 @@ IF %M%==1 GOTO CHROME
 IF %M%==2 GOTO PAINT
 IF %M%==3 GOTO IEIP
 IF %M%==4 GOTO CHROMEI
-IF %M%==5 GOTO PAGE2
+IF %M%==5 GOTO NF
 IF %M%==6 GOTO PAGE1
 IF %M%==7 GOTO EOF
 IF ELSE (
@@ -155,6 +155,12 @@ CLS
 :IE
 cd "C:\Program Files\Internet Explorer\iexplore.exe"
 start iexplore.exe
+GOTO PAGE%page%
+CLS
+
+:NF
+cd %windir%\system32
+start explorer.exe "M:\Olympia\New Folder"
 GOTO PAGE%page%
 CLS
 
